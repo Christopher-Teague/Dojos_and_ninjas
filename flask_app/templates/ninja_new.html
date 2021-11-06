@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Ninjas New</title>
+</head>
+<body>
+    <h1>It's Alive!</h1>
+    <div class="container">
+        
+        <h1>New Ninja</h1>
+        <form action="/ninja/create" class="mt-5" method="post">
+            <label for="dojo_id" class="">Select Dojo Location :</label>
+            <select class="mt-3 mb-3 form-select" name="dojo_id" id="dojo_id" >
+                {% for dojo in all_dojos %}
+                <option value="{{dojo.id}}">{{dojo.name}}</option>
+                {% endfor %}
+                
+            </select>
+            <div class="mb-3 form-group">
+                <label for="first_name" class="form-label">First Name :</label>
+                <input type="text" class="form-control"  name="first_name">
+            </div>
+            <div class="mb-3 form-group">
+                <label for="last_name" class="form-label">Last Name :</label>
+                <input type="text" class="form-control" name="last_name">
+            </div>
+            <div class="mb-3 form-group">
+                <label for="email" class="form-label">Age :</label>
+                <input type="" class="form-control" name="age">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Ninja</button>
+        </form>
+        <div class="mt-5">
+            <a class="btn btn-secondary btn-sm" href="/">home</a>
+        </div>
+    </div>
+
+    <!-- -- JS Bootstrap -- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
